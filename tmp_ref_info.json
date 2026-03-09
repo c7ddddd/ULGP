@@ -1,0 +1,18 @@
+{
+  "mode": "feature-lite",
+  "graph_space": "feature",
+  "candidate_ratio_actual": 0.328125,
+  "uncertainty_stats": {
+    "min": 0.0,
+    "mean": 0.4693295955657959,
+    "max": 0.9999014139175415
+  },
+  "runtime_ms": 7.781142368912697,
+  "num_nodes": 84,
+  "num_edges": 672,
+  "mean_update": 0.012103027664124966,
+  "max_update": 0.050000011920928955,
+  "propagation_steps": 3,
+  "gate_mean": 0.42816915966215585,
+  "clamped_fraction": 0.373015873015873
+}

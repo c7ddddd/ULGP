@@ -1,0 +1,122 @@
+CMD: /home/dct/miniconda3/envs/GAN/bin/python -u /home/dct/unified_model/AnomalyCLIP-main/experiments/uar_sra\ copy.py --dataset mvtec --class_name ALL --device 0 --n_iter 40 --lr 1e-4 --lambda_delta 0.10 --delta_budget 0.03 --lambda_rank 0.3 --lambda_region 0.01 --lambda_cal 0.05
+/home/dct/unified_model/AnomalyCLIP-main/experiments/../AnomalyCLIP_lib/model_load.py:6: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging
+Loading AnomalyCLIP...
+name ViT-L/14@336px
+text_layer False
+text_layer True
+Initializing class-specific contexts
+single_para torch.Size([4, 768])
+single_para torch.Size([4, 768])
+single_para torch.Size([4, 768])
+single_para torch.Size([4, 768])
+single_para torch.Size([4, 768])
+single_para torch.Size([4, 768])
+single_para torch.Size([4, 768])
+single_para torch.Size([4, 768])
+embedding_pos torch.Size([1, 77, 768])
+tokenized_prompts shape torch.Size([1, 1, 77]) torch.Size([1, 1, 77])
+/home/dct/unified_model/AnomalyCLIP-main/experiments/uar_sra copy.py:322: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  ckpt = torch.load(checkpoint, map_location="cpu")
+  Loaded: /home/dct/unified_model/AnomalyCLIP-main/experiments/../checkpoints/9_12_4_multiscale_mvtec1/epoch_15.pth
+  text_features shape: torch.Size([1, 2, 768])
+
+============================================================
+bottle
+============================================================
+bottle:   0%|          | 0/21 [00:00<?, ?it/s]bottle:   5%|▍         | 1/21 [00:00<00:14,  1.37it/s]bottle:  10%|▉         | 2/21 [00:01<00:10,  1.82it/s]bottle:  14%|█▍        | 3/21 [00:01<00:08,  2.03it/s]bottle:  19%|█▉        | 4/21 [00:02<00:07,  2.15it/s]bottle:  24%|██▍       | 5/21 [00:02<00:07,  2.19it/s]bottle:  29%|██▊       | 6/21 [00:02<00:06,  2.25it/s]bottle:  33%|███▎      | 7/21 [00:03<00:06,  2.25it/s]bottle:  38%|███▊      | 8/21 [00:03<00:05,  2.25it/s]bottle:  43%|████▎     | 9/21 [00:04<00:05,  2.23it/s]bottle:  48%|████▊     | 10/21 [00:04<00:04,  2.23it/s]bottle:  52%|█████▏    | 11/21 [00:05<00:04,  2.22it/s]bottle:  57%|█████▋    | 12/21 [00:05<00:04,  2.20it/s]bottle:  62%|██████▏   | 13/21 [00:06<00:03,  2.22it/s]bottle:  67%|██████▋   | 14/21 [00:06<00:03,  2.23it/s]bottle:  71%|███████▏  | 15/21 [00:06<00:02,  2.23it/s]bottle:  76%|███████▌  | 16/21 [00:07<00:02,  2.22it/s]bottle:  81%|████████  | 17/21 [00:07<00:01,  2.25it/s]bottle:  86%|████████▌ | 18/21 [00:08<00:01,  2.25it/s]bottle:  90%|█████████ | 19/21 [00:08<00:00,  2.27it/s]bottle:  95%|█████████▌| 20/21 [00:09<00:00,  2.29it/s]bottle: 100%|██████████| 21/21 [00:09<00:00,  2.46it/s]bottle: 100%|██████████| 21/21 [00:09<00:00,  2.23it/s]
+  N=83, anom=63, gt_px_sum=1287482
+  A0 range: [0.007591, 1.597395]
+  U  range: [0.000000, 1.000000], mean=0.165598
+  [base] image_auroc=93.7 image_ap=98.1 pixel_auroc=86.7 pixel_aupro=81.0
+build_regions:   0%|          | 0/83 [00:00<?, ?it/s]build_regions:   5%|▍         | 4/83 [00:00<00:02, 38.17it/s]build_regions:  11%|█         | 9/83 [00:00<00:01, 42.41it/s]build_regions:  17%|█▋        | 14/83 [00:00<00:02, 32.93it/s]build_regions:  30%|███       | 25/83 [00:00<00:01, 56.58it/s]build_regions:  40%|███▉      | 33/83 [00:00<00:00, 62.89it/s]build_regions:  48%|████▊     | 40/83 [00:00<00:00, 45.85it/s]build_regions:  63%|██████▎   | 52/83 [00:00<00:00, 62.32it/s]build_regions:  72%|███████▏  | 60/83 [00:01<00:00, 49.33it/s]build_regions:  82%|████████▏ | 68/83 [00:01<00:00, 54.61it/s]build_regions:  96%|█████████▋| 80/83 [00:01<00:00, 68.17it/s]build_regions: 100%|██████████| 83/83 [00:01<00:00, 55.11it/s]
+  UAR-SRA: n_iter=40 lr=0.0001 gamma=1.5 lam_anom=1.5 lam_delta=0.1 lam_tv=0.05 lam_region=0.01 lam_rank=0.3 lam_cal=0.05 stage1=0.6 dbudget=0.03 score=topk region=kmeans_clip u0=0.7 tau_u=0.3 use_u_input=False
+      0: La=0.0779 Limg=0.166708 Lrank=0.017175 Lninv=0.000000 Lcal=0.000000 Lf=0.000000 Lb=0.000000 Lm=0.000000 Lnrc=0.000001 Ld=0.000000 sd=0.300 rs=0.000 rk=1.000 Ltv=0.000000 Lreg=0.003006 valid=0.024 pair_keep=0.562 dmax=0.0000 dmean=-0.000001
+     10: La=1.4280 Limg=0.196623 Lrank=0.017148 Lninv=0.000000 Lcal=0.000015 Lf=0.000000 Lb=0.000099 Lm=0.000082 Lnrc=0.000001 Ld=0.000141 sd=0.479 rs=0.000 rk=1.000 Ltv=0.000011 Lreg=0.002770 valid=0.030 pair_keep=0.531 dmax=0.0005 dmean=-0.000013
+     20: La=1.2486 Limg=0.185101 Lrank=0.014773 Lninv=0.000000 Lcal=0.000000 Lf=0.000001 Lb=0.000223 Lm=0.000827 Lnrc=0.000001 Ld=0.000637 sd=0.659 rs=0.000 rk=1.000 Ltv=0.000085 Lreg=0.003311 valid=0.033 pair_keep=0.406 dmax=0.0024 dmean=0.000046
+    Early stop @ 25
+  UAR-SRA: 6.6s
+  [uar]  image_auroc=93.7 image_ap=98.1 pixel_auroc=86.6 pixel_aupro=81.2
+  delta: mean=0.000047 std=0.003284 max=0.009320
+
+============================================================
+cable
+============================================================
+cable:   0%|          | 0/38 [00:00<?, ?it/s]cable:   3%|▎         | 1/38 [00:00<00:23,  1.56it/s]cable:   5%|▌         | 2/38 [00:01<00:26,  1.34it/s]cable:   8%|▊         | 3/38 [00:02<00:23,  1.47it/s]cable:  11%|█         | 4/38 [00:02<00:25,  1.35it/s]cable:  13%|█▎        | 5/38 [00:03<00:23,  1.39it/s]cable:  16%|█▌        | 6/38 [00:04<00:22,  1.40it/s]cable:  18%|█▊        | 7/38 [00:05<00:22,  1.37it/s]cable:  21%|██        | 8/38 [00:05<00:20,  1.45it/s]cable:  24%|██▎       | 9/38 [00:06<00:20,  1.38it/s]cable:  26%|██▋       | 10/38 [00:07<00:19,  1.41it/s]cable:  29%|██▉       | 11/38 [00:07<00:18,  1.50it/s]cable:  32%|███▏      | 12/38 [00:08<00:18,  1.42it/s]cable:  34%|███▍      | 13/38 [00:09<00:17,  1.44it/s]cable:  37%|███▋      | 14/38 [00:09<00:16,  1.45it/s]cable:  39%|███▉      | 15/38 [00:10<00:15,  1.48it/s]cable:  42%|████▏     | 16/38 [00:11<00:14,  1.55it/s]cable:  45%|████▍     | 17/38 [00:11<00:12,  1.64it/s]cable:  47%|████▋     | 18/38 [00:12<00:11,  1.71it/s]cable:  50%|█████     | 19/38 [00:12<00:10,  1.75it/s]cable:  53%|█████▎    | 20/38 [00:13<00:10,  1.79it/s]cable:  55%|█████▌    | 21/38 [00:13<00:09,  1.81it/s]cable:  58%|█████▊    | 22/38 [00:14<00:08,  1.82it/s]cable:  61%|██████    | 23/38 [00:14<00:08,  1.85it/s]cable:  63%|██████▎   | 24/38 [00:15<00:07,  1.87it/s]cable:  66%|██████▌   | 25/38 [00:15<00:06,  1.90it/s]cable:  68%|██████▊   | 26/38 [00:16<00:06,  1.93it/s]cable:  71%|███████   | 27/38 [00:16<00:05,  1.93it/s]cable:  74%|███████▎  | 28/38 [00:17<00:05,  1.93it/s]cable:  76%|███████▋  | 29/38 [00:17<00:04,  1.95it/s]cable:  79%|███████▉  | 30/38 [00:18<00:04,  1.95it/s]cable:  82%|████████▏ | 31/38 [00:18<00:03,  1.95it/s]cable:  84%|████████▍ | 32/38 [00:19<00:03,  1.95it/s]cable:  87%|████████▋ | 33/38 [00:19<00:02,  1.95it/s]cable:  89%|████████▉ | 34/38 [00:20<00:02,  1.96it/s]cable:  92%|█████████▏| 35/38 [00:20<00:01,  1.96it/s]cable:  95%|█████████▍| 36/38 [00:21<00:01,  1.94it/s]cable:  97%|█████████▋| 37/38 [00:21<00:00,  1.94it/s]cable: 100%|██████████| 38/38 [00:22<00:00,  2.27it/s]cable: 100%|██████████| 38/38 [00:22<00:00,  1.71it/s]
+  N=150, anom=92, gt_px_sum=1155386
+  A0 range: [0.007600, 1.618668]
+  U  range: [0.000000, 1.000000], mean=0.203443
+  [base] image_auroc=94.7 image_ap=97.0 pixel_auroc=92.3 pixel_aupro=80.3
+build_regions:   0%|          | 0/150 [00:00<?, ?it/s]build_regions:  10%|█         | 15/150 [00:00<00:00, 147.41it/s]build_regions:  21%|██        | 31/150 [00:00<00:00, 149.06it/s]build_regions:  31%|███       | 46/150 [00:00<00:00, 149.22it/s]build_regions:  41%|████      | 61/150 [00:00<00:00, 148.34it/s]build_regions:  51%|█████     | 76/150 [00:00<00:00, 147.17it/s]build_regions:  61%|██████    | 91/150 [00:00<00:00, 146.31it/s]build_regions:  71%|███████   | 106/150 [00:00<00:00, 145.26it/s]build_regions:  81%|████████  | 121/150 [00:00<00:00, 144.26it/s]build_regions:  91%|█████████ | 136/150 [00:00<00:00, 144.69it/s]build_regions: 100%|██████████| 150/150 [00:01<00:00, 146.30it/s]
+  UAR-SRA: n_iter=40 lr=0.0001 gamma=1.5 lam_anom=1.5 lam_delta=0.1 lam_tv=0.05 lam_region=0.01 lam_rank=0.3 lam_cal=0.05 stage1=0.6 dbudget=0.03 score=topk region=kmeans_clip u0=0.7 tau_u=0.3 use_u_input=False
+      0: La=0.1874 Limg=0.222454 Lrank=0.004813 Lninv=0.000000 Lcal=0.000000 Lf=0.000000 Lb=0.000000 Lm=0.000000 Lnrc=0.000098 Ld=0.000049 sd=0.300 rs=0.000 rk=1.000 Ltv=0.000000 Lreg=0.004639 valid=0.029 pair_keep=0.562 dmax=0.0001 dmean=-0.000000
+     10: La=0.2546 Limg=0.262126 Lrank=0.002437 Lninv=0.000006 Lcal=0.000443 Lf=0.000000 Lb=0.000046 Lm=0.000321 Lnrc=0.000018 Ld=0.000215 sd=0.479 rs=0.000 rk=1.000 Ltv=0.000028 Lreg=0.004269 valid=0.049 pair_keep=0.312 dmax=0.0022 dmean=-0.000010
+     20: La=0.2295 Limg=0.149605 Lrank=0.002420 Lninv=0.000248 Lcal=0.001387 Lf=0.000008 Lb=0.001463 Lm=0.001758 Lnrc=0.000020 Ld=0.002352 sd=0.659 rs=0.000 rk=1.000 Ltv=0.000148 Lreg=0.004676 valid=0.058 pair_keep=0.531 dmax=0.0135 dmean=-0.000014
+    Early stop @ 26
+  UAR-SRA: 4.2s
+  [uar]  image_auroc=94.3 image_ap=96.8 pixel_auroc=92.3 pixel_aupro=79.5
+  delta: mean=-0.000247 std=0.006432 max=0.050580
+
+============================================================
+capsule
+============================================================
+capsule:   0%|          | 0/33 [00:00<?, ?it/s]capsule:   3%|▎         | 1/33 [00:00<00:17,  1.82it/s]capsule:   6%|▌         | 2/33 [00:01<00:20,  1.53it/s]capsule:   9%|▉         | 3/33 [00:01<00:19,  1.56it/s]capsule:  12%|█▏        | 4/33 [00:02<00:17,  1.65it/s]capsule:  15%|█▌        | 5/33 [00:02<00:16,  1.73it/s]capsule:  18%|█▊        | 6/33 [00:03<00:15,  1.77it/s]capsule:  21%|██        | 7/33 [00:04<00:14,  1.80it/s]capsule:  24%|██▍       | 8/33 [00:04<00:13,  1.81it/s]capsule:  27%|██▋       | 9/33 [00:05<00:13,  1.83it/s]capsule:  30%|███       | 10/33 [00:05<00:12,  1.84it/s]capsule:  33%|███▎      | 11/33 [00:06<00:11,  1.85it/s]capsule:  36%|███▋      | 12/33 [00:06<00:11,  1.85it/s]capsule:  39%|███▉      | 13/33 [00:07<00:10,  1.85it/s]capsule:  42%|████▏     | 14/33 [00:07<00:10,  1.86it/s]capsule:  45%|████▌     | 15/33 [00:08<00:09,  1.87it/s]capsule:  48%|████▊     | 16/33 [00:08<00:09,  1.88it/s]capsule:  52%|█████▏    | 17/33 [00:09<00:08,  1.88it/s]capsule:  55%|█████▍    | 18/33 [00:09<00:07,  1.88it/s]capsule:  58%|█████▊    | 19/33 [00:10<00:07,  1.89it/s]capsule:  61%|██████    | 20/33 [00:10<00:06,  1.89it/s]capsule:  64%|██████▎   | 21/33 [00:11<00:06,  1.89it/s]capsule:  67%|██████▋   | 22/33 [00:12<00:05,  1.88it/s]capsule:  70%|██████▉   | 23/33 [00:12<00:05,  1.89it/s]capsule:  73%|███████▎  | 24/33 [00:13<00:04,  1.89it/s]capsule:  76%|███████▌  | 25/33 [00:13<00:04,  1.90it/s]capsule:  79%|███████▉  | 26/33 [00:14<00:03,  1.88it/s]capsule:  82%|████████▏ | 27/33 [00:14<00:03,  1.89it/s]capsule:  85%|████████▍ | 28/33 [00:15<00:02,  1.89it/s]capsule:  88%|████████▊ | 29/33 [00:15<00:02,  1.89it/s]capsule:  91%|█████████ | 30/33 [00:16<00:01,  1.90it/s]capsule:  94%|█████████▍| 31/33 [00:16<00:01,  1.90it/s]capsule:  97%|█████████▋| 32/33 [00:17<00:00,  1.90it/s]capsule: 100%|██████████| 33/33 [00:17<00:00,  1.91it/s]capsule: 100%|██████████| 33/33 [00:17<00:00,  1.85it/s]
+  N=132, anom=109, gt_px_sum=324171
+  A0 range: [0.004096, 1.441337]
+  U  range: [0.000000, 1.000000], mean=0.165163
+  [base] image_auroc=95.9 image_ap=99.1 pixel_auroc=90.7 pixel_aupro=80.3
+build_regions:   0%|          | 0/132 [00:00<?, ?it/s]build_regions:   9%|▉         | 12/132 [00:00<00:01, 112.23it/s]build_regions:  19%|█▉        | 25/132 [00:00<00:00, 120.02it/s]build_regions:  29%|██▉       | 38/132 [00:00<00:00, 120.80it/s]build_regions:  39%|███▊      | 51/132 [00:00<00:00, 120.68it/s]build_regions:  48%|████▊     | 64/132 [00:00<00:00, 121.87it/s]build_regions:  58%|█████▊    | 77/132 [00:00<00:00, 121.91it/s]build_regions:  68%|██████▊   | 90/132 [00:00<00:00, 121.19it/s]build_regions:  78%|███████▊  | 103/132 [00:00<00:00, 119.22it/s]build_regions:  88%|████████▊ | 116/132 [00:00<00:00, 120.41it/s]build_regions:  98%|█████████▊| 129/132 [00:01<00:00, 122.27it/s]build_regions: 100%|██████████| 132/132 [00:01<00:00, 120.83it/s]
+  UAR-SRA: n_iter=40 lr=0.0001 gamma=1.5 lam_anom=1.5 lam_delta=0.1 lam_tv=0.05 lam_region=0.01 lam_rank=0.3 lam_cal=0.05 stage1=0.6 dbudget=0.03 score=topk region=kmeans_clip u0=0.7 tau_u=0.3 use_u_input=False
+      0: La=1.4758 Limg=0.169042 Lrank=0.019670 Lninv=0.000000 Lcal=0.000000 Lf=0.000000 Lb=0.000000 Lm=0.000000 Lnrc=0.000000 Ld=0.000000 sd=0.300 rs=0.000 rk=1.000 Ltv=0.000000 Lreg=0.002951 valid=0.018 pair_keep=0.500 dmax=0.0000 dmean=0.000000
+     10: La=0.4495 Limg=0.133935 Lrank=0.012388 Lninv=0.000000 Lcal=0.000006 Lf=0.000000 Lb=0.000031 Lm=0.000092 Lnrc=0.000002 Ld=0.000078 sd=0.479 rs=0.000 rk=1.000 Ltv=0.000013 Lreg=0.002954 valid=0.023 pair_keep=0.438 dmax=0.0006 dmean=0.000001
+     20: La=1.1176 Limg=0.205219 Lrank=0.014685 Lninv=0.000000 Lcal=0.000013 Lf=0.000001 Lb=0.000290 Lm=0.000561 Lnrc=0.000002 Ld=0.000571 sd=0.659 rs=0.000 rk=1.000 Ltv=0.000086 Lreg=0.003115 valid=0.033 pair_keep=0.406 dmax=0.0036 dmean=0.000048
+     30: La=1.4099 Limg=0.161113 Lrank=0.014892 Lninv=0.000003 Lcal=0.000170 Lf=0.000014 Lb=0.001669 Lm=0.002744 Lnrc=0.000002 Ld=0.003041 sd=0.838 rs=0.423 rk=0.788 Ltv=0.000415 Lreg=0.001939 valid=0.035 pair_keep=0.594 dmax=0.0140 dmean=0.000204
+    Early stop @ 35
+  UAR-SRA: 5.1s
+  [uar]  image_auroc=95.9 image_ap=99.1 pixel_auroc=88.6 pixel_aupro=79.9
+  delta: mean=0.000410 std=0.007799 max=0.043447
+
+============================================================
+carpet
+============================================================
+carpet:   0%|          | 0/30 [00:00<?, ?it/s]carpet:   3%|▎         | 1/30 [00:00<00:15,  1.84it/s]carpet:   7%|▋         | 2/30 [00:01<00:14,  1.88it/s]carpet:  10%|█         | 3/30 [00:01<00:14,  1.90it/s]carpet:  13%|█▎        | 4/30 [00:02<00:13,  1.91it/s]carpet:  17%|█▋        | 5/30 [00:02<00:13,  1.91it/s]carpet:  20%|██        | 6/30 [00:03<00:12,  1.91it/s]carpet:  23%|██▎       | 7/30 [00:03<00:12,  1.91it/s]carpet:  27%|██▋       | 8/30 [00:04<00:11,  1.92it/s]carpet:  30%|███       | 9/30 [00:04<00:10,  1.92it/s]carpet:  33%|███▎      | 10/30 [00:05<00:10,  1.92it/s]carpet:  37%|███▋      | 11/30 [00:05<00:09,  1.93it/s]carpet:  40%|████      | 12/30 [00:06<00:09,  1.94it/s]carpet:  43%|████▎     | 13/30 [00:06<00:08,  1.93it/s]carpet:  47%|████▋     | 14/30 [00:07<00:08,  1.92it/s]carpet:  50%|█████     | 15/30 [00:07<00:07,  1.92it/s]carpet:  53%|█████▎    | 16/30 [00:08<00:07,  1.92it/s]carpet:  57%|█████▋    | 17/30 [00:08<00:06,  1.92it/s]carpet:  60%|██████    | 18/30 [00:09<00:06,  1.92it/s]carpet:  63%|██████▎   | 19/30 [00:09<00:05,  1.92it/s]carpet:  67%|██████▋   | 20/30 [00:10<00:05,  1.92it/s]carpet:  70%|███████   | 21/30 [00:10<00:04,  1.92it/s]carpet:  73%|███████▎  | 22/30 [00:11<00:04,  1.92it/s]carpet:  77%|███████▋  | 23/30 [00:11<00:03,  1.93it/s]carpet:  80%|████████  | 24/30 [00:12<00:03,  1.94it/s]carpet:  83%|████████▎ | 25/30 [00:13<00:02,  1.95it/s]carpet:  87%|████████▋ | 26/30 [00:13<00:02,  1.94it/s]carpet:  90%|█████████ | 27/30 [00:14<00:01,  1.95it/s]carpet:  93%|█████████▎| 28/30 [00:14<00:01,  1.95it/s]carpet:  97%|█████████▋| 29/30 [00:15<00:00,  1.96it/s]carpet: 100%|██████████| 30/30 [00:15<00:00,  2.51it/s]carpet: 100%|██████████| 30/30 [00:15<00:00,  1.98it/s]
+  N=117, anom=89, gt_px_sum=502910
+  A0 range: [0.005320, 1.497135]
+  U  range: [0.000000, 1.000000], mean=0.164341
+  [base] image_auroc=100.0 image_ap=100.0 pixel_auroc=98.5 pixel_aupro=96.7
+build_regions:   0%|          | 0/117 [00:00<?, ?it/s]build_regions:  12%|█▏        | 14/117 [00:00<00:00, 137.28it/s]build_regions:  25%|██▍       | 29/117 [00:00<00:00, 139.77it/s]build_regions:  37%|███▋      | 43/117 [00:00<00:00, 139.68it/s]build_regions:  50%|████▉     | 58/117 [00:00<00:00, 140.29it/s]build_regions:  62%|██████▏   | 73/117 [00:00<00:00, 139.33it/s]build_regions:  74%|███████▍  | 87/117 [00:00<00:00, 138.51it/s]build_regions:  86%|████████▋ | 101/117 [00:00<00:00, 136.88it/s]build_regions:  99%|█████████▉| 116/117 [00:00<00:00, 138.64it/s]build_regions: 100%|██████████| 117/117 [00:00<00:00, 138.72it/s]
+  UAR-SRA: n_iter=40 lr=0.0001 gamma=1.5 lam_anom=1.5 lam_delta=0.1 lam_tv=0.05 lam_region=0.01 lam_rank=0.3 lam_cal=0.05 stage1=0.6 dbudget=0.03 score=topk region=kmeans_clip u0=0.7 tau_u=0.3 use_u_input=False
+      0: La=1.4779 Limg=0.159070 Lrank=0.019744 Lninv=0.000000 Lcal=0.000000 Lf=0.000000 Lb=0.000000 Lm=0.000000 Lnrc=0.000000 Ld=0.000000 sd=0.300 rs=0.000 rk=1.000 Ltv=0.000000 Lreg=0.002245 valid=0.006 pair_keep=0.562 dmax=0.0000 dmean=0.000000
+     10: La=1.1790 Limg=0.134544 Lrank=0.017346 Lninv=0.000000 Lcal=0.000009 Lf=0.000000 Lb=0.000032 Lm=0.000073 Lnrc=0.000000 Ld=0.000069 sd=0.479 rs=0.000 rk=1.000 Ltv=0.000015 Lreg=0.001975 valid=0.009 pair_keep=0.625 dmax=0.0004 dmean=-0.000003
+     20: La=1.0680 Limg=0.084024 Lrank=0.017345 Lninv=0.000000 Lcal=0.000020 Lf=0.000000 Lb=0.000055 Lm=0.000404 Lnrc=0.000001 Ld=0.000258 sd=0.659 rs=0.000 rk=1.000 Ltv=0.000080 Lreg=0.002406 valid=0.010 pair_keep=0.406 dmax=0.0014 dmean=-0.000009
+     30: La=0.6668 Limg=0.166779 Lrank=0.014849 Lninv=0.000000 Lcal=0.000039 Lf=0.000007 Lb=0.000210 Lm=0.002145 Lnrc=0.000001 Ld=0.001283 sd=0.838 rs=0.423 rk=0.788 Ltv=0.000398 Lreg=0.003682 valid=0.013 pair_keep=0.625 dmax=0.0063 dmean=0.000012
+    Early stop @ 30
+  UAR-SRA: 4.1s
+  [uar]  image_auroc=100.0 image_ap=100.0 pixel_auroc=98.5 pixel_aupro=96.3
+  delta: mean=-0.000072 std=0.003046 max=0.010989
+
+============================================================
+grid
+============================================================
+grid:   0%|          | 0/20 [00:00<?, ?it/s]grid:   5%|▌         | 1/20 [00:00<00:07,  2.54it/s]grid:  10%|█         | 2/20 [00:00<00:07,  2.55it/s]grid:  15%|█▌        | 3/20 [00:01<00:06,  2.55it/s]grid:  20%|██        | 4/20 [00:01<00:06,  2.56it/s]grid:  25%|██▌       | 5/20 [00:01<00:05,  2.55it/s]grid:  30%|███       | 6/20 [00:02<00:05,  2.56it/s]grid:  35%|███▌      | 7/20 [00:02<00:05,  2.55it/s]grid:  40%|████      | 8/20 [00:03<00:04,  2.58it/s]grid:  45%|████▌     | 9/20 [00:03<00:04,  2.60it/s]grid:  50%|█████     | 10/20 [00:03<00:03,  2.61it/s]grid:  55%|█████▌    | 11/20 [00:04<00:03,  2.63it/s]grid:  60%|██████    | 12/20 [00:04<00:03,  2.63it/s]grid:  65%|██████▌   | 13/20 [00:05<00:02,  2.64it/s]grid:  70%|███████   | 14/20 [00:05<00:02,  2.64it/s]grid:  75%|███████▌  | 15/20 [00:05<00:01,  2.65it/s]grid:  80%|████████  | 16/20 [00:06<00:01,  2.69it/s]grid:  85%|████████▌ | 17/20 [00:06<00:01,  2.70it/s]grid:  90%|█████████ | 18/20 [00:06<00:00,  2.72it/s]grid:  95%|█████████▌| 19/20 [00:07<00:00,  2.72it/s]grid: 100%|██████████| 20/20 [00:07<00:00,  3.20it/s]grid: 100%|██████████| 20/20 [00:07<00:00,  2.70it/s]
+  N=78, anom=57, gt_px_sum=144542
+  A0 range: [0.006307, 1.421131]
+  U  range: [0.000000, 1.000000], mean=0.168456
+  [base] image_auroc=99.3 image_ap=99.8 pixel_auroc=96.1 pixel_aupro=87.4
+build_regions:   0%|          | 0/78 [00:00<?, ?it/s]build_regions:  15%|█▌        | 12/78 [00:00<00:00, 112.93it/s]build_regions:  31%|███       | 24/78 [00:00<00:00, 114.09it/s]build_regions:  46%|████▌     | 36/78 [00:00<00:00, 114.26it/s]build_regions:  62%|██████▏   | 48/78 [00:00<00:00, 113.19it/s]build_regions:  77%|███████▋  | 60/78 [00:00<00:00, 112.38it/s]build_regions:  92%|█████████▏| 72/78 [00:00<00:00, 112.50it/s]build_regions: 100%|██████████| 78/78 [00:00<00:00, 113.14it/s]
+  UAR-SRA: n_iter=40 lr=0.0001 gamma=1.5 lam_anom=1.5 lam_delta=0.1 lam_tv=0.05 lam_region=0.01 lam_rank=0.3 lam_cal=0.05 stage1=0.6 dbudget=0.03 score=topk region=kmeans_clip u0=0.7 tau_u=0.3 use_u_input=False
+      0: La=0.2718 Limg=0.204041 Lrank=0.012466 Lninv=0.000000 Lcal=0.000000 Lf=0.000000 Lb=0.000000 Lm=0.000000 Lnrc=0.000003 Ld=0.000001 sd=0.300 rs=0.000 rk=1.000 Ltv=0.000000 Lreg=0.003801 valid=0.008 pair_keep=0.531 dmax=0.0001 dmean=-0.000001
+     10: La=0.3972 Limg=0.151473 Lrank=0.014734 Lninv=0.000000 Lcal=0.000008 Lf=0.000000 Lb=0.000037 Lm=0.000080 Lnrc=0.000001 Ld=0.000078 sd=0.479 rs=0.000 rk=1.000 Ltv=0.000017 Lreg=0.003465 valid=0.014 pair_keep=0.594 dmax=0.0003 dmean=-0.000006
+     20: La=0.5931 Limg=0.193894 Lrank=0.012437 Lninv=0.000000 Lcal=0.000040 Lf=0.000000 Lb=0.000160 Lm=0.000299 Lnrc=0.000001 Ld=0.000309 sd=0.659 rs=0.000 rk=1.000 Ltv=0.000065 Lreg=0.002858 valid=0.020 pair_keep=0.562 dmax=0.0011 dmean=-0.000026
+    Early stop @ 29
+  UAR-SRA: 4.0s
+  [uar]  image_auroc=99.3 image_ap=99.8 pixel_auroc=96.1 pixel_aupro=87.4
+  delta: mean=-0.000154 std=0.001457 max=0.008377
+
+============================================================
+hazelnut
+============================================================
+hazelnut:   0%|          | 0/28 [00:00<?, ?it/s]hazelnut:   4%|▎         | 1/28 [00:00<00:14,  1.90it/s]hazelnut:   7%|▋         | 2/28 [00:01<00:13,  1.93it/s]hazelnut:  11%|█         | 3/28 [00:01<00:12,  1.93it/s]hazelnut:  14%|█▍        | 4/28 [00:02<00:12,  1.93it/s]hazelnut:  18%|█▊        | 5/28 [00:02<00:11,  1.94it/s]hazelnut:  21%|██▏       | 6/28 [00:03<00:11,  1.94it/s]hazelnut:  25%|██▌       | 7/28 [00:03<00:10,  1.94it/s]hazelnut:  29%|██▊       | 8/28 [00:04<00:10,  1.94it/s]hazelnut:  32%|███▏      | 9/28 [00:04<00:09,  1.96it/s]hazelnut:  36%|███▌      | 10/28 [00:05<00:09,  1.96it/s]hazelnut:  39%|███▉      | 11/28 [00:05<00:08,  1.96it/s]hazelnut:  43%|████▎     | 12/28 [00:06<00:08,  1.96it/s]hazelnut:  46%|████▋     | 13/28 [00:06<00:07,  1.96it/s]hazelnut:  50%|█████     | 14/28 [00:07<00:07,  1.97it/s]hazelnut:  54%|█████▎    | 15/28 [00:07<00:06,  1.96it/s]hazelnut:  57%|█████▋    | 16/28 [00:08<00:06,  1.96it/s]hazelnut:  61%|██████    | 17/28 [00:08<00:05,  1.98it/s]hazelnut:  64%|██████▍   | 18/28 [00:09<00:05,  1.99it/s]hazelnut:  68%|██████▊   | 19/28 [00:09<00:04,  2.01it/s]hazelnut:  71%|███████▏  | 20/28 [00:10<00:03,  2.01it/s]hazelnut:  75%|███████▌  | 21/28 [00:10<00:03,  2.02it/s]hazelnut:  79%|███████▊  | 22/28 [00:11<00:03,  1.98it/s]hazelnut:  82%|████████▏ | 23/28 [00:11<00:02,  1.89it/s]hazelnut:  86%|████████▌ | 24/28 [00:12<00:02,  1.73it/s]hazelnut:  89%|████████▉ | 25/28 [00:13<00:01,  1.58it/s]hazelnut:  93%|█████████▎| 26/28 [00:13<00:01,  1.61it/s]hazelnut:  96%|█████████▋| 27/28 [00:14<00:00,  1.64it/s]hazelnut: 100%|██████████| 28/28 [00:14<00:00,  1.99it/s]hazelnut: 100%|██████████| 28/28 [00:14<00:00,  1.91it/s]
+  N=110, anom=70, gt_px_sum=630010
+  A0 range: [0.007778, 1.385846]
+  U  range: [0.000000, 1.000000], mean=0.158508
