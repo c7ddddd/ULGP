@@ -37,3 +37,4 @@ output/
 # Optional local scripts
 run_anomalyclip_ulgp*.sh
 launch_no_flash.py
+ouput/
